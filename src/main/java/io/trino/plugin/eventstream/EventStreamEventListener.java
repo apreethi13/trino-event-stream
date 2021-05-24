@@ -50,6 +50,8 @@ public class EventStreamEventListener
                 .setClientInfo(queryCreatedEvent.getContext().getClientInfo().toString())
                 .build();
 
+        log.info(created.toString());
+
         try {
             kafkaProducer.send(
                     new ProducerRecord<>(TOPIC_PRESTO_EVENT,
@@ -73,6 +75,7 @@ public class EventStreamEventListener
                 .setQueryEndTime(queryCompletedEvent.getEndTime().toString())
                 .setOutputRows(queryCompletedEvent.getStatistics().getOutputRows())
                 .build();
+        log.info(queryCompletedEvent.toString());
         try {
             kafkaProducer.send(
                     new ProducerRecord<>(TOPIC_PRESTO_EVENT,
@@ -94,6 +97,7 @@ public class EventStreamEventListener
                 .setQueryStartTime(splitCompletedEvent.getCreateTime().toString())
                 .setQueryEndTime(splitCompletedEvent.getEndTime().toString())
                 .build();
+        log.info(split.toString());
         try {
             kafkaProducer.send(
                     new ProducerRecord<>(TOPIC_PRESTO_EVENT,
