@@ -58,8 +58,9 @@ public class EventStreamEventListenerFactory
             String key = it.next();
             // String kafkaConfigKey = key.replaceFirst(REGEX_CONFIG_PREFIX,
             //         "");
-            log.info("Testing badis %s", key);
-            log.debug("Loading event-listener config %s : %s", key, config.get(key));
+            log.info(" ******** Testing Badis Logs ********* ");
+            log.info("Testing badis %s : %s", key, config.get(key));
+            log.debug("Loading event-listener config %s : %s", key);
             builder.put(key, config.get(key));
         }
 
