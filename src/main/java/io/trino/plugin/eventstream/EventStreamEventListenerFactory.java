@@ -61,6 +61,7 @@ public class EventStreamEventListenerFactory
             log.info(" ******** Testing Badis Logs ********* ");
             log.info("Testing badis %s : %s", key, config.get(key));
             log.debug("Loading event-listener config %s : %s", key);
+            log.info(" ******** End Testing Badis Logs ********* ");
             builder.put(key, config.get(key));
         }
 
